@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 
   p {
     font-size: 1.1rem;
-    color: #e0e0e0; /* Texto claro para contraste */
+    color: #e0e0e0;
     margin: 0;
   }
 `;
@@ -30,7 +30,6 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   gap: 8px;
 
   button {
-    cursor: pointer;
     user-select: none;
     font-size: 1rem;
     width: 100%;
@@ -38,42 +37,26 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
     margin: 8px 0;
     background: ${({ $correct, $userClicked }) =>
       $correct
-        ? "linear-gradient(90deg, #28a745, #218838)"
+        ? "linear-gradient(90deg, #478d18, #074d1c)"
         : !$correct && $userClicked
-        ? "linear-gradient(90deg, #dc3545, #c82333)"
-        : "linear-gradient(90deg, #007bff, #0056b3)"};
+        ? "linear-gradient(90deg, #880512, #7e0422)"
+        : "linear-gradient(90deg, #008cff, #2560e0)"};
     border: none;
     border-radius: 12px;
     color: #fff;
     font-weight: bold;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.623); /* Sombra mais forte */
+    box-shadow: 0px 4px 12px rgba(6, 20, 216, 0.733);
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-
-    /* Aplicar o efeito de hover somente se o botão não tiver sido clicado */
-    &:hover {
-      background: ${({ $correct, $userClicked }) =>
-        !$userClicked
-          ? $correct
-            ? "linear-gradient(90deg, #218838, #28a745)"
-            : "linear-gradient(90deg, #0056b3, #007bff)"
-          : "linear-gradient(90deg, #007bff, #0056b3)"};
-      transform: ${({ $userClicked }) =>
-        $userClicked ? "none" : "scale(1.05)"};
-      box-shadow: ${({ $userClicked }) =>
-        $userClicked
-          ? "0px 4px 12px rgba(0, 0, 0, 0.623)"
-          : "0px 6px 14px rgba(0, 0, 0, 0.7)"};
-    }
 
     &:active {
       background: ${({ $correct, $userClicked }) =>
         $correct
-          ? "linear-gradient(90deg, #218838, #28a745)"
+          ? "linear-gradient(90deg, #1ea811, #177c35)"
           : !$correct && $userClicked
-          ? "linear-gradient(90deg, #dc3545, #c82333)"
-          : "linear-gradient(90deg, #007bff, #0056b3)"};
+          ? "linear-gradient(90deg, #8b1818, #c0190d)"
+          : "linear-gradient(90deg, #006eff, #002ab3)"};
       transform: scale(1);
-      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.623);
+      box-shadow: 0px 4px 12px rgba(0, 162, 255, 0.623);
     }
   }
 `;
