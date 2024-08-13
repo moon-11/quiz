@@ -2,17 +2,19 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   max-width: 1100px;
-  background: #f0faff;
+  background: rgba(12, 6, 48, 0.9);
   border-radius: 12px;
-  border: 3px solid #00aaff;
+  border: 3px solid #1e90ff;
   padding: 30px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: 500px;
+  box-shadow: 0px 10px 30px rgba(0, 35, 230, 0.7);
   text-align: center;
   margin: 20px auto;
 
   p {
     font-size: 1.1rem;
-    color: #333;
+    color: #e0e0e0; /* Texto claro para contraste */
     margin: 0;
   }
 `;
@@ -23,7 +25,9 @@ type ButtonWrapperProps = {
 };
 
 export const ButtonWrapper = styled.div<ButtonWrapperProps>`
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
   button {
     cursor: pointer;
@@ -34,36 +38,42 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
     margin: 8px 0;
     background: ${({ $correct, $userClicked }) =>
       $correct
-        ? "linear-gradient(90deg, #56FFA4, #59BC86)"
+        ? "linear-gradient(90deg, #28a745, #218838)"
         : !$correct && $userClicked
-        ? "linear-gradient(90deg, #FF5656, #C16868)"
-        : "linear-gradient(90deg, #4a90e2, #6ab0ff)"};
+        ? "linear-gradient(90deg, #dc3545, #c82333)"
+        : "linear-gradient(90deg, #007bff, #0056b3)"};
     border: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     color: #fff;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
     font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.623); /* Sombra mais forte */
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 
+    /* Aplicar o efeito de hover somente se o botão não tiver sido clicado */
     &:hover {
       background: ${({ $correct, $userClicked }) =>
-        $correct
-          ? "linear-gradient(90deg, #4bdc91, #45a67e)"
-          : !$correct && $userClicked
-          ? "linear-gradient(90deg, #ff4747, #b74a4a)"
-          : "linear-gradient(90deg, #3a8ed9, #5a9bdf)"};
-      transform: scale(1.05);
+        !$userClicked
+          ? $correct
+            ? "linear-gradient(90deg, #218838, #28a745)"
+            : "linear-gradient(90deg, #0056b3, #007bff)"
+          : "linear-gradient(90deg, #007bff, #0056b3)"};
+      transform: ${({ $userClicked }) =>
+        $userClicked ? "none" : "scale(1.05)"};
+      box-shadow: ${({ $userClicked }) =>
+        $userClicked
+          ? "0px 4px 12px rgba(0, 0, 0, 0.623)"
+          : "0px 6px 14px rgba(0, 0, 0, 0.7)"};
     }
 
     &:active {
       background: ${({ $correct, $userClicked }) =>
         $correct
-          ? "linear-gradient(90deg, #45a67e, #4bdc91)"
+          ? "linear-gradient(90deg, #218838, #28a745)"
           : !$correct && $userClicked
-          ? "linear-gradient(90deg, #b74a4a, #ff4747)"
-          : "linear-gradient(90deg, #5a9bdf, #3a8ed9)"};
-      transform: scale(0.98);
+          ? "linear-gradient(90deg, #dc3545, #c82333)"
+          : "linear-gradient(90deg, #007bff, #0056b3)"};
+      transform: scale(1);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.623);
     }
   }
 `;
