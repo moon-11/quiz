@@ -1,0 +1,5 @@
+{
+  "question": "Questão: {{questionNr}} / {{totalQuestions}}",
+  "questionText": "{{text}}",
+  "answerText": "{{text}}"
+}

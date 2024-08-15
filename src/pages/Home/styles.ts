@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(140deg, #000000, #00027a);
+    background: linear-gradient(140deg, #171829, #d8d8df);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
   }
 
   .score {
-    color: #1e90ff;
+    color: #adb2b6;
     font-size: 2.5rem;
     margin: 10px 0;
     font-weight: bold;
