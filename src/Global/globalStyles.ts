@@ -103,13 +103,6 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 5px;
     transition: background 0.3s ease;
 
-    &:hover {
-      background: #444;
-    }
-
-    &:active {
-      background: #555;
-    }
   }
 
   input, textarea {
