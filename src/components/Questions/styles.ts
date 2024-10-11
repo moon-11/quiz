@@ -55,8 +55,10 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
     border: none;
     border-radius: 10px;
     color: #f0f0f0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
+    line-height: 1.2;
+    padding: 0 15px;
     box-shadow: 0px 5px 12px rgba(3, 8, 37, 0.773);
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 

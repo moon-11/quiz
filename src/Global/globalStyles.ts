@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
     overflow: auto;
   }
+  
   *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -28,12 +29,25 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
     padding: 20px;
     overflow-y: auto;
-  
 
- 
+    
+    &::-webkit-scrollbar {
+      width: 8px; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.4); 
+      border-radius: 10px; 
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2); 
+      border-radius: 10px; 
+    }
+  }
+
   @media (max-width: 768px) {
     body {
       line-height: 1.4;
@@ -73,7 +87,6 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  
   h1, h2, h3, h4, h5, h6 {
     color: #f2f2f2;
     font-weight: 600;
@@ -81,7 +94,6 @@ export const GlobalStyles = createGlobalStyle`
     transition: font-size 0.3s ease;
   }
 
- 
   a {
     color: #1e90ff;
     text-decoration: none;
@@ -91,7 +103,6 @@ export const GlobalStyles = createGlobalStyle`
       color: #00bfff;
     }
   }
-
 
   button {
     font-family: inherit;
@@ -103,6 +114,9 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 5px;
     transition: background 0.3s ease;
 
+    &:hover {
+      background: #555; 
+    }
   }
 
   input, textarea {

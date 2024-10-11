@@ -9,12 +9,12 @@ export const Wrapper = styled.div<{ isFirstQuestion: boolean }>`
     isFirstQuestion ? "rgba(20, 20, 30, 0.95)" : "transparent"};
   border-radius: 15px;
   padding: 20px;
-  width: calc(100% - 40px);
-  max-width: 600px;
-  min-height: 90vh;
-  margin: 20px;
+  width: 600px;
+  min-height: 95vh;
+  margin: 20px auto;
   box-shadow: ${({ isFirstQuestion }) =>
     isFirstQuestion ? "0px 4px 20px rgba(0, 0, 0, 0.6)" : "none"};
+  overflow-y: auto;
 
   > p {
     color: #a0a0b3;
@@ -63,6 +63,11 @@ export const Wrapper = styled.div<{ isFirstQuestion: boolean }>`
     &:active {
       transform: scale(0.95);
     }
+  }
+
+  @media (max-width: 600px) {
+    width: calc(100% - 40px);
+    margin: 10px;
   }
 
   @media (min-width: 768px) {
