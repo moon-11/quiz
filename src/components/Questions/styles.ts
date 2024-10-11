@@ -1,28 +1,41 @@
 import styled from "styled-components";
 
+interface ButtonWrapperProps {
+  $correct: boolean;
+  $userClicked: boolean;
+}
+
 export const Wrapper = styled.div`
-  max-width: 1100px;
+  width: 100%;
+  max-width: 90%;
   background: rgba(21, 21, 42, 0.825);
   border-radius: 12px;
   border: 2px solid #2b4f7b;
-  padding: 30px;
-  width: 500px;
-  height: 500px;
+  padding: 20px;
   box-shadow: 0px 8px 25px rgba(30, 24, 96, 0.6);
   text-align: center;
   margin: 20px auto;
+  box-sizing: border-box;
 
   p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #c8c8c8;
-    margin: 20px;
+    margin: 15px 0;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 700px;
+    padding: 25px;
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1100px;
+    padding: 30px;
   }
 `;
-
-type ButtonWrapperProps = {
-  $correct: boolean;
-  $userClicked: boolean;
-};
 
 export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   display: flex;
@@ -30,11 +43,9 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   gap: 10px;
 
   button {
-    user-select: none;
-    font-size: 1rem;
     width: 100%;
     height: 50px;
-    margin: 8px 0;
+    margin: 5px 0;
     background: ${({ $correct, $userClicked }) =>
       $correct
         ? "linear-gradient(90deg, #3a9e23, #0a6628)"
@@ -44,6 +55,7 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
     border: none;
     border-radius: 10px;
     color: #f0f0f0;
+    font-size: 1rem;
     font-weight: bold;
     box-shadow: 0px 5px 12px rgba(3, 8, 37, 0.773);
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s;

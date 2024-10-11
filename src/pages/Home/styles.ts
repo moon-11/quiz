@@ -22,13 +22,15 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: rgba(20, 20, 30, 0.95);
   border-radius: 15px;
-  padding: 25px;
-  width: 600px;
-  height: 800px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  min-height: 70vh;
+  margin: 0 auto;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
 
   > p {
     color: #a0a0b3;
@@ -38,7 +40,7 @@ export const Wrapper = styled.div`
 
   .score {
     color: #dcdcdc;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 15px 0;
     font-weight: bold;
   }
@@ -48,7 +50,7 @@ export const Wrapper = styled.div`
     background-image: linear-gradient(180deg, #d8d8df, #4b4b4b);
     background-clip: text;
     color: transparent;
-    font-size: 2.7rem;
+    font-size: 2rem;
     text-align: center;
     margin: 20px 0;
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.7));
@@ -62,9 +64,9 @@ export const Wrapper = styled.div`
     box-shadow: 0px 4px 15px rgba(41, 41, 64, 0.6);
     border-radius: 12px;
     height: 50px;
-    margin: 15px 0;
+    margin: 10px 0;
     padding: 0 30px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #e0e0e0;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -81,5 +83,16 @@ export const Wrapper = styled.div`
 
   .start {
     max-width: 200px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 25px;
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 35px;
   }
 `;
