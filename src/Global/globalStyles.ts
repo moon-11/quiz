@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Catamaran', sans-serif;
-    background: linear-gradient(140deg, #00154a, #07a1c7ff);
+    background: linear-gradient(140deg, #081128, #0f3c5aff);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,8 +29,9 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
-    padding: 20px; 
-  }
+    padding: 20px;
+    overflow-y: auto;
+  
 
  
   @media (max-width: 768px) {

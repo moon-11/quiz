@@ -1,36 +1,20 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Catamaran', sans-serif;
-    background: linear-gradient(140deg, #0e1d43, #3c2a4d);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-`;
-
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ isFirstQuestion: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(20, 20, 30, 0.95);
+  background: ${({ isFirstQuestion }) =>
+    isFirstQuestion ? "rgba(20, 20, 30, 0.95)" : "transparent"};
   border-radius: 15px;
   padding: 20px;
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 600px;
   min-height: 70vh;
-  margin: 0 auto;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+  margin: 20px;
+  box-shadow: ${({ isFirstQuestion }) =>
+    isFirstQuestion ? "0px 4px 20px rgba(0, 0, 0, 0.6)" : "none"};
 
   > p {
     color: #a0a0b3;
@@ -59,7 +43,7 @@ export const Wrapper = styled.div`
   .start,
   .next {
     cursor: pointer;
-    background: linear-gradient(180deg, #353f59, #1e2747);
+    background: linear-gradient(180deg, #273965, #070e29);
     border: none;
     box-shadow: 0px 4px 15px rgba(41, 41, 64, 0.6);
     border-radius: 12px;
@@ -72,17 +56,13 @@ export const Wrapper = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      background: linear-gradient(180deg, #1e2747, #353f59);
+      background: linear-gradient(180deg, #070e29, #273965);
       transform: scale(1.05);
     }
 
     &:active {
       transform: scale(0.95);
     }
-  }
-
-  .start {
-    max-width: 200px;
   }
 
   @media (min-width: 768px) {

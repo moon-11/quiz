@@ -5,7 +5,7 @@ import {
   fetchQuizQuestions,
   QuestionsState,
 } from "../../utils/API";
-import { GlobalStyle, Wrapper } from "./styles";
+import { Wrapper } from "./styles";
 
 export type AnswerObject = {
   question: string;
@@ -23,10 +23,12 @@ export const Home: React.FC = () => {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
+  const [isFirstQuestion, setIsFirstQuestion] = useState(false);
 
   const startTrivia = async () => {
     setLoading(true);
     setGameOver(false);
+    setIsFirstQuestion(true);
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
       Difficulty.EASY
@@ -68,8 +70,7 @@ export const Home: React.FC = () => {
 
   return (
     <>
-      <GlobalStyle />
-      <Wrapper>
+      <Wrapper isFirstQuestion={isFirstQuestion}>
         <h1>REACT QUIZ</h1>
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <button className="start" onClick={startTrivia}>
