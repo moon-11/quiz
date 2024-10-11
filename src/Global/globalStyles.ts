@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: auto;
   }
   *, *::before, *::after {
     margin: 0;

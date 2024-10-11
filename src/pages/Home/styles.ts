@@ -11,7 +11,7 @@ export const Wrapper = styled.div<{ isFirstQuestion: boolean }>`
   padding: 20px;
   width: calc(100% - 40px);
   max-width: 600px;
-  min-height: 70vh;
+  min-height: 90vh;
   margin: 20px;
   box-shadow: ${({ isFirstQuestion }) =>
     isFirstQuestion ? "0px 4px 20px rgba(0, 0, 0, 0.6)" : "none"};
