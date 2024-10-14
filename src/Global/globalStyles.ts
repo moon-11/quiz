@@ -4,16 +4,15 @@ export const GlobalStyles = createGlobalStyle`
   html, body {
     height: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    
     font-family: 'Catamaran', sans-serif;
     background: linear-gradient(140deg, #081128, #0f3c5aff);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: flex-start;
     overflow: auto;
   }
-  
+
   *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -25,10 +24,6 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #121212;
     color: #e0e0e0;
     line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     padding: 20px;
     overflow-y: auto;
 

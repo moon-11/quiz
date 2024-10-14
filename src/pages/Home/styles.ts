@@ -4,15 +4,14 @@ export const Wrapper = styled.div<{ isFirstQuestion: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background: ${({ isFirstQuestion }) =>
     isFirstQuestion ? "rgba(20, 20, 30, 0.95)" : "transparent"};
   border-radius: 15px;
-  padding: 15px;
   width: 80%;
   max-width: 600px;
   min-height: 500px;
-  margin: 40px auto 20px;
+
   box-shadow: ${({ isFirstQuestion }) =>
     isFirstQuestion ? "0px 4px 20px rgba(0, 0, 0, 0.6)" : "none"};
   overflow-y: auto;
