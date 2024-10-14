@@ -32,7 +32,6 @@ export const GlobalStyles = createGlobalStyle`
     padding: 20px;
     overflow-y: auto;
 
-    
     &::-webkit-scrollbar {
       width: 8px; 
     }

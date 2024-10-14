@@ -11,16 +11,12 @@ export const Wrapper = styled.div<{ isFirstQuestion: boolean }>`
   padding: 15px;
   width: 80%;
   max-width: 600px;
-  min-height: 95vh;
-  margin: 20px auto;
+  min-height: 500px;
+  margin: 40px auto 20px;
   box-shadow: ${({ isFirstQuestion }) =>
     isFirstQuestion ? "0px 4px 20px rgba(0, 0, 0, 0.6)" : "none"};
   overflow-y: auto;
 
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 1000;
 
   > p {
